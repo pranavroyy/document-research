@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+backend/.env
+backend/venv/
+.env
+
+# Conda
+.conda/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Helper script
+build_history.py
+
+# Tests
+.pytest_cache/
+
+# Mac
+.DS_Store
+
+# Database
+postgres_data/
+
+# IDE
+.vscode/
+.idea/
