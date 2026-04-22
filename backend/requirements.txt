@@ -1,0 +1,14 @@
+fastapi[standard]
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+python-dotenv
+pydantic
+alembic
+pgvector
+pypdf
+python-multipart
+ollama
+sentence-transformers
+langchain-text-splitters
+docling
