@@ -12,6 +12,7 @@ router = APIRouter(prefix="/search", tags=["search"])
 class SearchRequest(BaseModel):
     question: str
     top_k: int = 5
+    document_ids: list[int] | None = None
 
 
 @router.post("")
@@ -21,8 +22,13 @@ def search_chunks(
 ):
     question_embedding = generate_embedding(request.question)
 
+    query = db.query(Chunk)
+
+    if request.document_ids:
+        query = query.filter(Chunk.document_id.in_(request.document_ids))
+
     results = (
-        db.query(Chunk)
+        query
         .order_by(Chunk.embedding.cosine_distance(question_embedding))
         .limit(request.top_k)
         .all()
