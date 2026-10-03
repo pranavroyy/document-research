@@ -29,6 +29,12 @@ jobs:
       - name: Import check
         run: python -m compileall app
 
+      - name: Install test dependencies
+        run: pip install pytest
+
+      - name: Run tests
+        run: python -m pytest -q
+
   frontend:
     runs-on: ubuntu-latest
 
