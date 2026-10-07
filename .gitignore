@@ -12,9 +12,6 @@ backend/venv/
 frontend/node_modules/
 frontend/dist/
 
-# Helper script
-build_history.py
-
 # Tests
 .pytest_cache/
 
